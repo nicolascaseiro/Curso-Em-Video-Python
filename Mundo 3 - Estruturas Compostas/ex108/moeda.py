@@ -15,4 +15,4 @@ def metade(preco = 0):
     return res
 
 def moeda(preco = 0, moeda = 'R$'):
-    return f'{moeda}{preco:>8.2f}'.replace('.', ',')
+    return f'{moeda}{preco:>.2f}'.replace('.', ',')
