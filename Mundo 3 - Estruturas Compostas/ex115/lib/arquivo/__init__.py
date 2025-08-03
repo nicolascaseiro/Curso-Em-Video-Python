@@ -25,10 +25,10 @@ def lerArquivo(nome):
         print('Erro ao ler o arquivo.')
     else:
         cabecalho('PESSOAS CADASTRADAS')
-        for p in a:
-            data = p.split(';')
-            data[1] = data[1].replace('\n', '')
-            print(f'{data[0]:<35}{data[1]:^3} anos')
+        for linha in a:
+            dado = linha.split(';')
+            dado[1] = dado[1].replace('\n', '')
+            print(f'{dado[0]:<30}{dado[1]:^3} anos')
     finally:
         a.close()
 
@@ -45,3 +45,4 @@ def cadastrar(arquivo, nome='Desconhecido', idade=0):
         else:
             print(f'Novo registro de {nome} adicionado.')
             a.close()
+
