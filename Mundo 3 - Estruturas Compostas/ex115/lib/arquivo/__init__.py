@@ -18,13 +18,13 @@ def criarArquivo(nome):
     else:
         print(f'Arquivo {nome} criado com sucesso!')
 
-def readFile(nome):
+def lerArquivo(nome):
     try:
         a = open(nome, 'rt')
     except:
-        print('Error while attempting to read file.')
+        print('Erro ao ler o arquivo.')
     else:
-        header('REGISTERED PEOPLE')
+        cabecalho('PESSOAS CADASTRADAS')
         for p in a:
             data = p.split(';')
             data[1] = data[1].replace('\n', '')
@@ -46,6 +46,7 @@ def register(file, nome='unknow', age=0):
         else:
             print(f'New person registered: {nome}')
             a.close()
+
 
 
 
