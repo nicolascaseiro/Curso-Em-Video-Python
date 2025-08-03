@@ -12,11 +12,12 @@ while True:
         lerArquivo(arquivo)
     elif resposta == 2:
         nome = str(input('Nome: '))
-        age = integer('Age: ')
+        age = leiaInt('Age: ')
         register(arquivo, nome, age)
     elif resposta == 3:
-        header('Saindo do Sistema... Até logo!')
+        cabecalho('Saindo do Sistema... Até logo!')
         break
     else:
         print('\033[31mERRO. Digite uma opção válida.\033[m')
     sleep(1)
+
