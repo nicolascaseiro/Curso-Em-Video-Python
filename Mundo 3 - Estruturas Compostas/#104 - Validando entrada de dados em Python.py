@@ -2,7 +2,7 @@ def leiaInt(mensagem):
     ok = False
     valor = 0
     while True:
-        n = str(input(mensagem))
+        n = int(input(mensagem))
         if n.isnumeric():
             valor = int(n)
             ok = True
