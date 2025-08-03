@@ -1,29 +1,26 @@
 from lib.interface import *
 
-def fileExist(name):
+def arquivoExiste(nome):
     try:
-        a = open(name, 'rt')
+        a = open(nome, 'rt')
         a.close()
     except FileNotFoundError:
         return False
     else:
         return True
 
-
-
-def createFile(name):
+def criarArquivo(nome):
     try:
-        a = open(name, 'wt+')
+        a = open(nome, 'wt+')
         a.close()
     except:
-        print('There was an error creating the file.')
+        print('Houve um erro na criação do arquivo!')
     else:
-        print(f'File {name} successfully created.')
+        print(f'Arquivo {nome} criado com sucesso!')
 
-
-def readFile(name):
+def readFile(nome):
     try:
-        a = open(name, 'rt')
+        a = open(nome, 'rt')
     except:
         print('Error while attempting to read file.')
     else:
@@ -36,18 +33,19 @@ def readFile(name):
         a.close()
 
 
-def register(file, name='unknow', age=0):
+def register(file, nome='unknow', age=0):
     try:
         a = open(file, 'at')
     except:
         print('Error while attempting to read file.')
     else:
         try:
-            a.write(f'{name};{age}\n')
+            a.write(f'{nome};{age}\n')
         except:
             print('There was an error while writing the data.')
         else:
-            print(f'New person registered: {name}')
+            print(f'New person registered: {nome}')
             a.close()
+
 
 
