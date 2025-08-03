@@ -28,24 +28,24 @@ def lerArquivo(nome):
         for p in a:
             data = p.split(';')
             data[1] = data[1].replace('\n', '')
-            print(f'{data[0]:<35}{data[1]:^3} years')
+            print(f'{data[0]:<35}{data[1]:^3} anos')
     finally:
         a.close()
 
-
-def register(file, nome='unknow', age=0):
+def cadastrar(arquivo, nome='Desconhecido', idade=0):
     try:
         a = open(file, 'at')
     except:
-        print('Error while attempting to read file.')
+        print('Houve um ERRO na abertura do arquivo.')
     else:
         try:
-            a.write(f'{nome};{age}\n')
+            a.write(f'{nome};{idade}\n')
         except:
-            print('There was an error while writing the data.')
+            print('Houve um ERRO na hora de escrever os dados!')
         else:
-            print(f'New person registered: {nome}')
+            print(f'Novo registro de {nome} adicionado.')
             a.close()
+
 
 
 
