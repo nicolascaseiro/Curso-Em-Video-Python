@@ -20,13 +20,14 @@ def cabecalho(msg):
     print(linha())
 
 def menu(lista):
-    header('\033[040mMENU PRINCIPAL\033[m')
+    cabecalho('\033[040mMENU PRINCIPAL\033[m')
     c = 1
-    for items in lst:
+    for items in lista:
         print(f'\033[33m{c} - \033[34m{items}\033[m')
         c += 1
     print(linha())
     opcao = leiaInt('\033[32mSua opção: \033[m')
         return opcao
+
 
 
