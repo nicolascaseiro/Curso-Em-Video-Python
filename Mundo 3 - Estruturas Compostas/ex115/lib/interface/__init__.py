@@ -1,35 +1,32 @@
-def integer(msg):
+def leiaInt(mensagem):
     while True:
         try:
-            n = int(input(msg))
-        except KeyboardInterrupt:
-            print('Data entry was interrupted by the user.')
-            return 0
+            n = int(input(mensagem))
         except (ValueError, TypeError):
-            print('\033[31mInvalid. Insert an valid option.\033[m')
+            print('\033[31mERRO: por favor, digite um número inteiro válido.\033[m')
             continue
+        except (KeyboardInterrupt):
+            print('\n\033[31mUsuário preferiu não digitar esse número.\033[m')
+            return 0
         else:
-            return n
+           return n
 
+def linha(tam=42):
+    return '=' * tam
 
-def linha():
-    return '=' * 42
-
-
-def header(msg):
+def cabecalho(msg):
     print(linha())
-    print(msg.center(42))
+    print(txt.center(42))
     print(linha())
 
-
-def menu(lst):
+def menu(lista):
     header('\033[040mMENU PRINCIPAL\033[m')
     c = 1
     for items in lst:
         print(f'\033[33m{c} - \033[34m{items}\033[m')
         c += 1
     print(linha())
-    while True:
-        opc = integer('Select option: ')
-        return opc
+    opcao = leiaInt('\033[32mSua opção: \033[m')
+        return opcao
+
 
