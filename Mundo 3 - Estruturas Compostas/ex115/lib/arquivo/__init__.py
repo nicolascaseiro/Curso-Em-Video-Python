@@ -45,8 +45,3 @@ def cadastrar(arquivo, nome='Desconhecido', idade=0):
         else:
             print(f'Novo registro de {nome} adicionado.')
             a.close()
-
-
-
-
-
