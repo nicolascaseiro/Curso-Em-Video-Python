@@ -2,29 +2,21 @@ from lib.interface import *
 from lib.arquivo import *
 from time import sleep
 
-file = ('cursoemvideo.txt')
-if not fileExist(file):
-    createFile(file)
-
+arquivo = ('cursoemvideo.txt')
+if not arquivoExiste(arquivo):
+    criarArquivo(arquivo)
 
 while True:
-    answer = menu(['See registered people', 'Register new person', 'Exit'])
-    if answer == 1:
-        readFile(file)
-    elif answer == 2:
-        name = str(input('Name: '))
+    resposta = menu(['Ver pessoa cadastrada', 'Cadastrar nova pessoa', 'Sair do sistema'])
+    if resposta == 1:
+        lerArquivo(arquivo)
+    elif resposta == 2:
+        nome = str(input('Nome: '))
         age = integer('Age: ')
-        register(file, name, age)
-    elif answer == 3:
-        header(f'Finishing...')
+        register(arquivo, nome, age)
+    elif resposta == 3:
+        header('Saindo do Sistema... Até logo!')
         break
     else:
-        print('\033[31mERROR. select a valid option.\033[m')
+        print('\033[31mERRO. Digite uma opção válida.\033[m')
     sleep(1)
-
-
-
-
-
-
-
